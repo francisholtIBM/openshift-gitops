@@ -8,7 +8,6 @@
 
 3. ```oc apply -f instance/argocd.yaml```
 
-
 #### Folder Overview ####
 
 ```gitops```
