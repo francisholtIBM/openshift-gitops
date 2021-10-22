@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: instance-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: instance/argocd
+    repoURL: https://github.com/francisholtIBM/openshift-gitops
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false

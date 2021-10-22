@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: subscription-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: rhacm
+        url: https://kubernetes.default.svc
+      - cluster: edb_postgresql
+        url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: operator-{{cluster}}
+      namespace: openshift-gitops
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+      project: operator-base
+      source:
+        path: subscription/operators/{{cluster}}/overlay/env
+        repoURL: https://github.com/francisholtIBM/openshift-gitops
+        targetRevision: master
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
