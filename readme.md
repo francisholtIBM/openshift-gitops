@@ -15,12 +15,12 @@
 
 ```subscription```
 - Subscribes to the operators
-    - argocd.yaml creates the ArgoCD project 
+    - argocd.yaml creates the ArgoCD app 
     - module-set.yaml creates the ArgoCD application set, calling the operator folders
     - operators folder contains the yamls for operator subscription
 
 ```instance```
 - Provisions instances within the operators. For example, MultiClusterHub for RHACM
-    - argocd.yaml creates the ArgoCD project 
+    - argocd.yaml creates the ArgoCD app 
     - module-set.yaml creates the ArgoCD application set, calling the operator folders
     - operators folder contains the yamls to provision instances of operators
