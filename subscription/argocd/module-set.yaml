@@ -18,7 +18,7 @@ spec:
     spec:
       destination:
         server: https://kubernetes.default.svc
-      project: operator-base
+      project: default
       source:
         path: subscription/operators/{{cluster}}/overlay/env
         repoURL: https://github.com/francisholtIBM/openshift-gitops

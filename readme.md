@@ -4,9 +4,11 @@
 
 1. ```oc apply -k gitops```
 
-2. ```oc apply -f subscription/argocd.yaml```
+2. ```oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller```
 
-3. ```oc apply -f instance/argocd.yaml```
+3. ```oc apply -f subscription/argocd.yaml```
+
+4. ```oc apply -f instance/argocd.yaml```
 
 #### Folder Overview ####
 
