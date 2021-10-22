@@ -4,4 +4,4 @@ metadata:
   name: multiclusterhub
   namespace: rhacm
 spec:
-  availabilityConfig: Basic
+  availabilityConfig: High
