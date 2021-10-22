@@ -11,10 +11,16 @@
 #### Folder Overview ####
 
 ```gitops```
-Installs the OpenShift GitOps operator
+- Installs the OpenShift GitOps operator
 
 ```subscription```
-Subscribes to the operators
+- Subscribes to the operators
+    - argocd.yaml creates the ArgoCD project 
+    - module-set.yaml creates the ArgoCD application set, calling the operator folders
+    - operators folder contains the yamls for operator subscription
 
 ```instance```
-Provisions instances within the operators. For example, MultiClusterHub for RHACM
+- Provisions instances within the operators. For example, MultiClusterHub for RHACM
+    - argocd.yaml creates the ArgoCD project 
+    - module-set.yaml creates the ArgoCD application set, calling the operator folders
+    - operators folder contains the yamls to provision instances of operators
