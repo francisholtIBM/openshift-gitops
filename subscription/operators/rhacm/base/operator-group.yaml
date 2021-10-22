@@ -2,9 +2,9 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: rhacm-operatorgroup
-  namespace: rhacm1
+  namespace: rhacm
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   targetNamespaces:
-  - rhacm1
+  - rhacm
